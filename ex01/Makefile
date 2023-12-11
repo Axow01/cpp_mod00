@@ -2,7 +2,7 @@
 
 NAME = phonebook
 
-SRC = phonebook.cpp
+SRC = phonebook.cpp contact.cpp main.cpp
 
 OBJS = $(patsubst %.cpp, bin/%.o, $(SRC))
 

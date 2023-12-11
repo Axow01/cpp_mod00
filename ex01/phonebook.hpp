@@ -1,21 +1,12 @@
 #include <iostream>
-
-class Contact {
-	public:
-		Contact(void);
-		~Contact(void);
-		Contact(std::string FirstName, std::string LastName, std::string PhoneNumber, std::string OtherInfo);
-		std::string FirstName;
-		std::string LastName;
-		std::string PhoneNumber;
-		std::string OtherInfo;
-};
+#include "contact.hpp"
 
 class PhoneBook {
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void addContact(Contact contact);
-		int		index;
+		void SetValue(int index, Contact contact);
+		Contact GetValue(int index);
+	private:
 		Contact Contacts[8];
 };
