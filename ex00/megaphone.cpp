@@ -23,6 +23,6 @@ int	main(int argc, char **argv) {
 			std::cout << ft_toupper((int) argv[i][b]);
 		}
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 	return 0;
 }
