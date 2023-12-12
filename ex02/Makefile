@@ -1,8 +1,8 @@
 #--- DEFAULT VALUES ---#
 
-NAME = 
+NAME = accounts
 
-SRC = 
+SRC = Account.cpp tests.cpp
 
 OBJS = $(patsubst %.cpp, bin/%.o, $(SRC))
 
