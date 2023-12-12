@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 std::string	PromptUser(std::string prompt) {
 	std::string x;
@@ -52,7 +52,15 @@ void	SearchFunctionality(PhoneBook pb) {
 		PrintContact(pb.GetValue(i));
 	}
 	std::cout << "---------------------------------------------" << std::endl;
-	index = std::stoi(PromptUser("Index> "));
+	std::string str = PromptUser("Index> ");
+	for (int b = 0; str[b]; b++) {
+		if (isdigit(str[b]) == 0) {
+			std::cout << "ERROR: The input is not a digit!" << std::endl;
+			return;
+		}
+	}
+	if (!str.empty())
+		index = std::stoi(str);
 	for (int i = 0; i < 8; i++) {
 		if (index <= 0)
 			break;
@@ -62,6 +70,16 @@ void	SearchFunctionality(PhoneBook pb) {
 		}
 	}
 	std::cout << "ERROR: The index specified was not found!" << std::endl;
+}
+
+bool	checkContactEmpty(Contact c) {
+	for (int i = 0; i <= 4; i++) {
+		if (c.GetValue(i).empty()) {
+			std::cout << "ERROR: Missing contact informations!" << std::endl;
+			return false;
+		}
+	}
+	return true;
 }
 
 int	main(void) {
@@ -77,7 +95,9 @@ int	main(void) {
 		if (UsrCmd.compare("EXIT") == 0)
 			break;
 		else if (UsrCmd.compare("ADD") == 0) {
-			pb.SetValue(index, CreateNewContact(index));
+			Contact c = CreateNewContact(index);
+			if (checkContactEmpty(c))
+				pb.SetValue(index, c);
 			index++;
 		}
 		else if (UsrCmd.compare("SEARCH") == 0)
