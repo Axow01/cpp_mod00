@@ -1,8 +1,8 @@
 #--- DEFAULT VALUES ---#
 
-NAME = megaphone
+NAME = 
 
-SRC = megaphone.cpp
+SRC = 
 
 OBJS = $(patsubst %.cpp, bin/%.o, $(SRC))
 

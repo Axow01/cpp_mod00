@@ -2,13 +2,13 @@
 
 NAME = phonebook
 
-SRC = phonebook.cpp contact.cpp main.cpp
+SRC = PhoneBook.cpp Contact.cpp main.cpp
 
 OBJS = $(patsubst %.cpp, bin/%.o, $(SRC))
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #---   RULES   ---#
 
