@@ -38,7 +38,7 @@ std::string	PrintContactLine(std::string str) {
 }
 
 void	PrintContact(Contact contact) {
-	if (contact.GetIndex() == 0)
+	if (contact.GetIndex() <= 0 || contact.GetIndex() > 8)
 		return;
 	std::cout << "|" << std::setw(10) << contact.GetIndex() << "|";
 	std::cout << std::setw(10) << PrintContactLine(contact.GetValue(0)) << "|";
