@@ -5,7 +5,8 @@
 std::string	PromptUser(std::string prompt) {
 	std::string x;
 	std::cout << prompt;
-	std::getline(std::cin, x);
+	if (!std::getline(std::cin, x))
+		exit(1);
 	return x;
 }
 
