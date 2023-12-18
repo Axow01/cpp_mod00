@@ -2,6 +2,11 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) {
+	for (int i = 0; i < 8; i++) {
+		Contact buffer = this->GetValue(i);
+		buffer.SetIndex(0);
+		this->SetValue(i, buffer);
+	}
 }
 
 PhoneBook::~PhoneBook(void) {
